@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARLIN KNEW: The Ministry of Truth Was Wrong</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-red: #D32F2F;
+            --color-black: #1a1a1a;
+            --color-white: #f5f5f5;
+            --color-yellow: #FFC107;
+            --color-gray: #424242;
+            --color-blue: #1976D2;
+            --offset-red: #FF5252;
+            --offset-cyan: #00BCD4;
+        }
+
+        body {
+            font-family: 'Courier Prime', monospace;
+            line-height: 1.4;
+            color: var(--color-black);
+            background: var(--color-white);
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(26, 26, 26, 0.03) 2px,
+                    rgba(26, 26, 26, 0.03) 4px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(26, 26, 26, 0.02) 2px,
+                    rgba(26, 26, 26, 0.02) 4px
+                );
+            overflow-x: hidden;
+        }
+
+        /* Offset Printing Effects */
+        .offset-print {
+            position: relative;
+        }
+
+        .offset-print::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: var(--offset-red);
+            z-index: -1;
+        }
+
+        .offset-print::after {
+            content: attr(data-text);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            color: var(--offset-cyan);
+            z-index: -2;
+        }
+
+        /* Big Brother Eye Background */
+        .surveillance-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.02;
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--color-red) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, var(--color-black) 1px, transparent 1px);
+            background-size: 200px 200px, 150px 150px;
+            z-index: -10;
+            animation: surveillance 20s linear infinite;
+        }
+
+        @keyframes surveillance {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hero Section - Ministry of Truth Style */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: 
+                linear-gradient(45deg, rgba(211, 47, 47, 0.9), rgba(26, 26, 26, 0.95)),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(255, 255, 255, 0.05) 20px,
+                    rgba(255, 255, 255, 0.05) 40px
+                );
+            color: var(--color-white);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="15" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/><circle cx="50" cy="50" r="3" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 300px 300px;
+            animation: eyeWatch 30s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes eyeWatch {
+            0% { background-position: 0 0; }
+            100% { background-position: 300px 300px; }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .ministry-header {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+            color: var(--color-yellow);
+            border: 3px solid var(--color-yellow);
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 0.9;
+            text-shadow: 
+                4px 4px 0px var(--offset-red),
+                -4px -4px 0px var(--offset-cyan),
+                0 0 20px rgba(211, 47, 47, 0.5);
+        }
+
+        .thought-police {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-yellow);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 5px solid var(--color-yellow);
+            padding-left: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 1rem 1rem 2rem;
+        }
+
+        .war-is-peace {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background: var(--color-red);
+            color: var(--color-white);
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 4px solid var(--color-white);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            background: var(--color-white);
+            color: var(--color-red);
+            border-color: var(--color-red);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 10px 20px rgba(211, 47, 47, 0.3),
+                inset 0 0 0 2px var(--color-red);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Navigation - Telescreen Style */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 3px solid var(--color-red);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--color-red);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '◉';
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-yellow);
+            text-shadow: 0 0 10px var(--color-yellow);
+            animation: eyePulse 2s infinite;
+        }
+
+        @keyframes eyePulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .logo::after {
+            content: 'WATCHING';
+            position: absolute;
+            top: -8px;
+            right: -60px;
+            font-size: 0.5rem;
+            color: var(--color-yellow);
+            border: 1px solid var(--color-yellow);
+            padding: 2px 4px;
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a::before {
+            font-size: 1.4rem;
+            font-weight: 900;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .nav-links a[href="#home"]::before {
+            content: '◈';
+            color: var(--color-yellow);
+        }
+
+        .nav-links a[href="#doublethink"]::before {
+            content: '◐';
+            color: var(--color-yellow);
+        }
+
+        .nav-links a[href="#thoughtcrime"]::before {
+            content: '⬟';
+            color: var(--color-red);
+        }
+
+        .nav-links a[href="#newspeak"]::before {
+            content: '◆';
+            color: var(--color-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-yellow);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Add propaganda symbols to ministry stamps */
+        .ministry-stamp::before {
+            content: '▲';
+            margin-right: 5px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: var(--color-red);
+        }
+
+        .ministry-stamp[style*="color: var(--color-yellow)"]::before {
+            content: '★';
+            color: var(--color-yellow);
+        }
+
+        /* Add symbols to telescreen labels */
+        .telescreen-label::before {
+            content: '■ ';
+            margin-right: 5px;
+            font-weight: 900;
+        }
+
+        /* Add additional typeset elements */
+        .section-title::before {
+            content: '◆ ';
+            color: var(--color-yellow);
+            margin-right: 10px;
+        }
+
+        .section-title::after {
+            content: ' ◆';
+            color: var(--color-yellow);
+            margin-left: 10px;
+            position: relative;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-red), var(--color-yellow), var(--color-red));
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles - Propaganda Poster Style */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--color-red);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+            text-shadow: 
+                3px 3px 0px var(--offset-red),
+                -3px -3px 0px var(--offset-cyan);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-red), var(--color-yellow), var(--color-red));
+        }
+
+        /* Enhanced typeset details */
+        .ministry-header::before {
+            content: '◉ ';
+            color: var(--color-yellow);
+            margin-right: 10px;
+        }
+
+        .ministry-header::after {
+            content: ' ◉';
+            color: var(--color-yellow);
+            margin-left: 10px;
+        }
+
+        .thought-police::before {
+            content: '▼ ';
+            color: var(--color-red);
+            margin-right: 10px;
+        }
+
+        /* Propaganda Cards */
+        .propaganda-card {
+            background: var(--color-white);
+            border: 4px solid var(--color-black);
+            padding: 2.5rem;
+            margin: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 
+                8px 8px 0px var(--color-red),
+                16px 16px 0px var(--color-black);
+        }
+
+        .propaganda-card::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, var(--color-yellow), var(--color-red));
+            z-index: -1;
+        }
+
+        .propaganda-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 
+                12px 12px 0px var(--color-red),
+                20px 20px 0px var(--color-black);
+        }
+
+        .propaganda-card:nth-child(odd) {
+            transform: rotate(-1deg);
+        }
+
+        .propaganda-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .propaganda-card:hover {
+            transform: rotate(0deg) translate(-4px, -4px);
+        }
+
+        /* Ministry Stamp */
+        .ministry-stamp {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--color-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--color-red);
+            padding: 5px 10px;
+            background: var(--color-white);
+            transform: rotate(15deg);
+        }
+
+        /* Typography */
+        .propaganda-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--color-black);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 3px solid var(--color-red);
+            padding-bottom: 1rem;
+        }
+
+        .propaganda-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: var(--color-gray);
+        }
+
+        /* Grid Layouts */
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 0;
+            margin-top: 4rem;
+        }
+
+        /* Vintage TV Screen */
+        .vintage-tv {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 1.5rem 0;
+            background: #2a2a2a;
+            border: 8px solid #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                inset 0 0 50px rgba(0,0,0,0.8),
+                0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .vintage-tv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 3px,
+                    transparent 4px
+                ),
+                radial-gradient(ellipse at center, rgba(100, 100, 100, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+            animation: tvStatic 0.1s infinite linear;
+            z-index: 2;
+        }
+
+        .vintage-tv::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 10%;
+            bottom: 10%;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.1) 0px,
+                    rgba(255, 255, 255, 0.05) 2px,
+                    transparent 4px,
+                    rgba(255, 255, 255, 0.1) 6px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.05) 0px,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.1) 4px
+                );
+            animation: tvNoise 0.5s infinite;
+            z-index: 1;
+        }
+
+        @keyframes tvStatic {
+            0% { transform: translateX(0px) translateY(0px); }
+            10% { transform: translateX(-1px) translateY(-1px); }
+            20% { transform: translateX(1px) translateY(0px); }
+            30% { transform: translateX(0px) translateY(1px); }
+            40% { transform: translateX(-1px) translateY(-1px); }
+            50% { transform: translateX(1px) translateY(1px); }
+            60% { transform: translateX(0px) translateY(-1px); }
+            70% { transform: translateX(-1px) translateY(0px); }
+            80% { transform: translateX(1px) translateY(-1px); }
+            90% { transform: translateX(0px) translateY(1px); }
+            100% { transform: translateX(-1px) translateY(0px); }
+        }
+
+        @keyframes tvNoise {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.4; }
+        }
+
+        .vintage-tv:hover {
+            transform: scale(1.02);
+            box-shadow: 
+                inset 0 0 60px rgba(255, 255, 255, 0.1),
+                0 6px 20px rgba(0,0,0,0.6);
+        }
+
+        .tv-screen {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            background: 
+                radial-gradient(ellipse at center, 
+                    rgba(50, 50, 50, 0.8) 0%, 
+                    rgba(20, 20, 20, 0.9) 60%, 
+                    rgba(0, 0, 0, 1) 100%),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.02) 0px,
+                    transparent 2px
+                );
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .tv-static {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            line-height: 1.2;
+            animation: staticFlicker 2s infinite;
+        }
+
+        @keyframes staticFlicker {
+            0%, 100% { opacity: 0.6; }
+            25% { opacity: 0.8; }
+            50% { opacity: 0.3; }
+            75% { opacity: 0.9; }
+        }
+
+        /* TV Controls */
+        .tv-controls {
+            position: absolute;
+            right: -25px;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tv-knob {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #444, #222);
+            border: 2px solid #111;
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.1);
+        }
+
+        /* Click indicator */
+        .tv-click-hint {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--color-yellow);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 3px 8px;
+            border-radius: 3px;
+            z-index: 4;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Telescreen Label */
+        .telescreen-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--color-yellow);
+            padding: 5px 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: 1px solid var(--color-yellow);
+            z-index: 4;
+        }
+
+        /* Special Sections */
+        .doublethink {
+            background: var(--color-white);
+        }
+
+        .thoughtcrime {
+            background: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .thoughtcrime .section-title {
+            color: var(--color-yellow);
+        }
+
+        .thoughtcrime .propaganda-card {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-white);
+            border-color: var(--color-yellow);
+        }
+
+        .thoughtcrime .propaganda-card h3 {
+            color: var(--color-yellow);
+            border-bottom-color: var(--color-yellow);
+        }
+
+        .newspeak {
+            background: var(--color-gray);
+            color: var(--color-white);
+        }
+
+        .newspeak .section-title {
+            color: var(--color-yellow);
+        }
+
+        /* Footer - Ministry of Truth Style */
+        .footer {
+            background: var(--color-black);
+            color: var(--color-white);
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 6px solid var(--color-red);
+            position: relative;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    var(--color-red) 0px,
+                    var(--color-red) 20px,
+                    var(--color-yellow) 20px,
+                    var(--color-yellow) 40px
+                );
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            10% { transform: translate(-2px, -1px); }
+            20% { transform: translate(2px, 1px); }
+            30% { transform: translate(-1px, 2px); }
+            40% { transform: translate(1px, -2px); }
+            50% { transform: translate(-2px, 1px); }
+            60% { transform: translate(2px, -1px); }
+            70% { transform: translate(-1px, -2px); }
+            80% { transform: translate(1px, 2px); }
+            90% { transform: translate(-2px, -1px); }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .ministry-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .propaganda-card {
+                transform: none !important;
+                margin: 1rem 0;
+            }
+
+            .propaganda-card::before {
+                display: none;
+            }
+        }
+
+        /* Memory Hole Animation */
+        .memory-hole {
+            animation: memoryHole 3s ease-in-out infinite;
+        }
+
+        @keyframes memoryHole {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="surveillance-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">TRUTH MINISTRY</div>
+            <ul class="nav-links">
+                <li><a href="#home">FRONTPAGE</a></li>
+                <li><a href="#doublethink">DOUBLETHINK</a></li>
+                <li><a href="#thoughtcrime">THOUGHTCRIME</a></li>
+                <li><a href="#newspeak">NEWSPEAK</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="ministry-header">MINISTRY OF TRUTH • OFFICIAL BULLETIN</div>
+            <h1 class="glitch">CARLIN KNEW</h1>
+            <div class="thought-police">THE THOUGHT POLICE WERE REAL</div>
+            <div class="war-is-peace">
+                "War is Peace • Freedom is Slavery • Ignorance is Strength"<br>
+                But George Carlin saw through the doublethink
+            </div>
+            <a href="#doublethink" class="cta-button">REVEAL THE TRUTH</a>
+        </div>
+    </section>
+
+    <!-- Doublethink Section -->
+    <section id="doublethink" class="section doublethink">
+        <div class="container">
+            <h2 class="section-title fade-in">DOUBLETHINK EXPOSED</h2>
+            <div class="ministry-grid">
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">DECLASSIFIED</div>
+                    <h3>System Analysis</h3>
+                    <p>CARLIN analyzed structural power: language control, consumer manipulation, institutional authority. His targets were the mechanisms of control themselves—explaining why his observations resurface during every authoritarian advance and propaganda campaign.</p>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">TOP SECRET</div>
+                    <h3>Language Control</h3>
+                    <p>By dissecting "soft language," he revealed how the Ministry rewrites reality through euphemisms and newspeak. Every phrase sanitized, every truth obscured—Carlin predicted modern content moderation and narrative control decades early.</p>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">RESTRICTED</div>
+                    <h3>Power Mapping</h3>
+                    <p>His "American Dream" exposé connected money-power networks that control education, media, and politics. The Inner Party's playbook exposed: how wealth concentrates power and manufactures consent among the Proles.</p>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">CONFIDENTIAL</div>
+                    <h3>Sacred Lies</h3>
+                    <p>Nothing escaped interrogation: religion, patriotism, environmentalism, "rights" themselves. Carlin stress-tested every orthodoxy, revealing how the Party maintains control through manufactured reverence and enforced belief.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thoughtcrime Section -->
+    <section id="thoughtcrime" class="section thoughtcrime">
+        <div class="container">
+            <h2 class="section-title fade-in">THOUGHTCRIME ARCHIVES</h2>
+            <div class="ministry-grid">
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">THOUGHT POLICE</div>
+                    <h3>Newspeak Resistance</h3>
+                    <p>FORBIDDEN MATERIAL: Carlin's "soft language" analysis shows how reality is rewritten—"shell shock" becoming "post-traumatic stress disorder." A manual for detecting Ministry of Truth language manipulation protocols.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=o25I2fzFGoY', '_blank')">
+                        <div class="telescreen-label">■ TELESCREEN EVIDENCE</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ CLASSIFIED ▓▓▓<br>
+                                ░░░ SOFT LANGUAGE ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">CENSORSHIP</div>
+                    <h3>Free Speech Crime</h3>
+                    <p>COURT VIOLATION: His "Seven Words" case literally rewrote broadcast law. Supreme Court FCC v. Pacifica established precedent for modern speech control—the blueprint for today's content moderation totalitarianism.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=x9IDwUeODEE', '_blank')">
+                        <div class="telescreen-label">■ COURT RECORDS</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ CENSORED ▓▓▓<br>
+                                ░░░ SEVEN WORDS ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ PROLE EDUCATION</div>
+                    <h3>Dream Deconstruction</h3>
+                    <p>SUBVERSIVE CONTENT: "It's a big club, and you're not in it." Carlin's economic analysis that exposed how the Inner Party rigs education and politics—anticipating modern inequality and manufactured consent systems.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=acLW1vFO-2Q', '_blank')">
+                        <div class="telescreen-label">■ TRUTH TRANSMISSION</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ RESTRICTED ▓▓▓<br>
+                                ░░░ AMERICAN DREAM ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ CONSUMPTION</div>
+                    <h3>Consumer Control</h3>
+                    <p>MATERIAL ANALYSIS: His "stuff" deconstruction revealed the psychological manipulation behind consumer capitalism—how the Party keeps Proles distracted through endless acquisition and organization cycles.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=HDX_M1DIYuo', '_blank')">
+                        <div class="telescreen-label">■ PSYCHOLOGICAL STUDY</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ CLASSIFIED ▓▓▓<br>
+                                ░░░ A PLACE FOR STUFF ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ ECOLOGY</div>
+                    <h3>Environmental Truth</h3>
+                    <p>HERETICAL THOUGHTS: "Saving the Planet" inverted climate orthodoxy—Earth survives, humans are fragile. A dangerous critique of environmental doublethink and manufactured crisis narratives used for population control.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=7W33HRc1A6c', '_blank')">
+                        <div class="telescreen-label">■ ECOLOGICAL REPORT</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ RESTRICTED ▓▓▓<br>
+                                ░░░ SAVING PLANET ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ SECURITY</div>
+                    <h3>Theater Exposed</h3>
+                    <p>SURVEILLANCE CRITIQUE: Airport security theater analysis—how spectacle creates compliance while providing no real protection. Carlin predicted modern security state psychology: control through fear, submission through ritual.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=5WqdY1qLSPE', '_blank')">
+                        <div class="telescreen-label">■ SECURITY FILES</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ CLASSIFIED ▓▓▓<br>
+                                ░░░ AIRPORT SECURITY ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ CHILD CONTROL</div>
+                    <h3>Parenting Protocols</h3>
+                    <p>YOUTH INDOCTRINATION: Predicted helicopter parenting and participation-trophy culture—how the Party creates fragile adults through overprotective childhood programming. Social engineering through manufactured self-esteem.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=AKMQWAz86X0', '_blank')">
+                        <div class="telescreen-label">■ YOUTH STUDIES</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ CONFIDENTIAL ▓▓▓<br>
+                                ░░░ CHILD WORSHIP ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ RELIGION</div>
+                    <h3>Institutional Power</h3>
+                    <p>SPIRITUAL CONTROL: Exposed religious institutions as power structures, not belief systems—mapping today's church-state-autonomy manipulation. How organized religion serves as auxiliary thought control apparatus.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=8r-e2NDSTuE', '_blank')">
+                        <div class="telescreen-label">■ FAITH ANALYSIS</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ HERETICAL ▓▓▓<br>
+                                ░░░ RELIGION EXPOSED ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ PROPAGANDA</div>
+                    <h3>Advertising Control</h3>
+                    <p>MIND MANIPULATION: "Advertising Lullaby" decoded pre-algorithmic persuasion—how messaging soothes, flatters, and steers behavior. The prototype for modern attention capture and behavioral modification technology.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=7yrfxD0gqzY', '_blank')">
+                        <div class="telescreen-label">■ PERSUASION PROTOCOLS</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ TOP SECRET ▓▓▓<br>
+                                ░░░ ADVERTISING ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">★ FINAL WARNING</div>
+                    <h3>Rights Illusion</h3>
+                    <p>ULTIMATE TRUTH: "Rights" exist only while power allows—the foundational lie of democratic society. Carlin's final warning about emergency powers, surveillance, and the fragility of supposed constitutional protections.</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=C_FQZUSy1Vg', '_blank')">
+                        <div class="telescreen-label">■ CONSTITUTIONAL TRUTH</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ SIGNAL SCRAMBLED ████<br>
+                                ▓▓▓ FORBIDDEN ▓▓▓<br>
+                                ░░░ NO RIGHTS ░░░<br>
+                                ██ CLICK TO DECODE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO VIEW ◄</div>
+                    </div>
+                </div>>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">CHILD CONTROL</div>
+                    <h3>Parenting Protocols</h3>
+                    <p>YOUTH INDOCTRINATION: Predicted helicopter parenting and participation-trophy culture—how the Party creates fragile adults through overprotective childhood programming. Social engineering through manufactured self-esteem.</p>
+                    <div class="vintage-video">
+                        <div class="telescreen-label">YOUTH STUDIES</div>
+                        <iframe src="https://www.youtube.com/embed/AKMQWAz86X0?autoplay=1&mute=1&controls=1&loop=1&playlist=AKMQWAz86X0" allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">RELIGION</div>
+                    <h3>Institutional Power</h3>
+                    <p>SPIRITUAL CONTROL: Exposed religious institutions as power structures, not belief systems—mapping today's church-state-autonomy manipulation. How organized religion serves as auxiliary thought control apparatus.</p>
+                    <div class="vintage-video">
+                        <div class="telescreen-label">FAITH ANALYSIS</div>
+                        <iframe src="https://www.youtube.com/embed/8r-e2NDSTuE?autoplay=1&mute=1&controls=1&loop=1&playlist=8r-e2NDSTuE" allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">PROPAGANDA</div>
+                    <h3>Advertising Control</h3>
+                    <p>MIND MANIPULATION: "Advertising Lullaby" decoded pre-algorithmic persuasion—how messaging soothes, flatters, and steers behavior. The prototype for modern attention capture and behavioral modification technology.</p>
+                    <div class="vintage-video">
+                        <div class="telescreen-label">PERSUASION PROTOCOLS</div>
+                        <iframe src="https://www.youtube.com/embed/7yrfxD0gqzY?autoplay=1&mute=1&controls=1&loop=1&playlist=7yrfxD0gqzY" allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                </div>
+                
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp" style="color: var(--color-yellow); border-color: var(--color-yellow);">FINAL WARNING</div>
+                    <h3>Rights Illusion</h3>
+                    <p>ULTIMATE TRUTH: "Rights" exist only while power allows—the foundational lie of democratic society. Carlin's final warning about emergency powers, surveillance, and the fragility of supposed constitutional protections.</p>
+                    <div class="vintage-video">
+                        <div class="telescreen-label">CONSTITUTIONAL TRUTH</div>
+                        <iframe src="https://www.youtube.com/embed/C_FQZUSy1Vg?autoplay=1&mute=1&controls=1&loop=1&playlist=C_FQZUSy1Vg" allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newspeak Section -->
+    <section id="newspeak" class="section newspeak">
+        <div class="container">
+            <h2 class="section-title fade-in">NEWSPEAK PRIORITY TRANSMISSIONS</h2>
+            <div class="ministry-grid">
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Language Manipulation</h3>
+                    <p>"Soft Language/Euphemisms"</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=o25I2fzFGoY', '_blank')">
+                        <div class="telescreen-label">■ DECODE NOW</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ SOFT LANGUAGE ▓▓▓<br>
+                                ░░░░░ EUPHEMISMS ░░░░░<br>
+                                ██ PRIORITY ONE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Power Structure</h3>
+                    <p>"The American Dream"</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=acLW1vFO-2Q', '_blank')">
+                        <div class="telescreen-label">■ DECODE NOW</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ AMERICAN DREAM ▓▓▓<br>
+                                ░░░░░ BIG CLUB ░░░░░<br>
+                                ██ PRIORITY ONE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Consumer Control</h3>
+                    <p>"A Place for My Stuff"</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=HDX_M1DIYuo', '_blank')">
+                        <div class="telescreen-label">■ DECODE NOW</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ MY STUFF ▓▓▓<br>
+                                ░░░░░ CONSUMER ░░░░░<br>
+                                ██ PRIORITY ONE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Environmental Truth</h3>
+                    <p>"Saving the Planet"</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=7W33HRc1A6c', '_blank')">
+                        <div class="telescreen-label">■ DECODE NOW</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ SAVE PLANET ▓▓▓<br>
+                                ░░░░░ ECOLOGY ░░░░░<br>
+                                ██ PRIORITY ONE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Security Theater</h3>
+                    <p>"Airport Security"</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=5WqdY1qLSPE', '_blank')">
+                        <div class="telescreen-label">■ DECODE NOW</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ AIRPORT SEC ▓▓▓<br>
+                                ░░░░░ THEATER ░░░░░<br>
+                                ██ PRIORITY ONE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Rights Illusion</h3>
+                    <p>"You Have No Rights"</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=C_FQZUSy1Vg', '_blank')">
+                        <div class="telescreen-label">■ DECODE NOW</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ NO RIGHTS ▓▓▓<br>
+                                ░░░░░ ILLUSION ░░░░░<br>
+                                ██ PRIORITY ONE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Education Control</h3>
+                    <p>"There's a reason education sucks..."</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=ILQepXUhJ98', '_blank')">
+                        <div class="telescreen-label">■ DECODE NOW</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ EDUCATION ▓▓▓<br>
+                                ░░░░░ CONTROL ░░░░░<br>
+                                ██ PRIORITY ONE ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+                <div class="propaganda-card fade-in">
+                    <div class="ministry-stamp">▲ PRIORITY ONE</div>
+                    <h3>Complete Archive</h3>
+                    <p>"George Carlin's American Dream"</p>
+                    <div class="vintage-tv" onclick="window.open('https://www.youtube.com/watch?v=TWCGCacySrQ', '_blank')">
+                        <div class="telescreen-label">■ FULL TRANSMISSION</div>
+                        <div class="tv-screen">
+                            <div class="tv-static">
+                                ████ ████ ████ ████<br>
+                                ▓▓▓ DOCUMENTARY ▓▓▓<br>
+                                ░░░░░ ARCHIVE ░░░░░<br>
+                                ██ FULL ACCESS ██
+                            </div>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-knob"></div>
+                            <div class="tv-knob"></div>
+                        </div>
+                        <div class="tv-click-hint">► CLICK TO DECODE ◄</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem; color: var(--color-red);">
+                MINISTRY OF TRUTH • DEPARTMENT OF SOCIAL OBSERVATION
+            </div>
+            <p style="margin-bottom: 1rem;">
+                WAR IS PEACE • FREEDOM IS SLAVERY • IGNORANCE IS STRENGTH
+            </p>
+            <p style="margin-bottom: 1rem;">
+                OFFICIAL ARCHIVES AVAILABLE AT 
+                <a href="https://georgecarlin.com" style="color: var(--color-yellow); text-decoration: none;">GEORGECARLIN.COM</a>
+            </p>
+            <p style="font-style: italic; color: var(--color-yellow); margin-top: 2rem; font-size: 0.9rem;">
+                "IN A TIME OF DECEIT TELLING THE TRUTH IS A REVOLUTIONARY ACT"<br>
+                - ATTRIBUTED TO ORWELL (BUT PROBABLY APOCRYPHAL)
+            </p>
+            <div style="margin-top: 2rem; font-size: 0.8rem; color: var(--color-gray);">
+                BIG BROTHER IS WATCHING • TELESCREENS ARE LISTENING • THOUGHTCRIME IS PUNISHABLE<br>
+                EDUCATIONAL USE ONLY • DOUBLE PLUS GOOD CITIZEN COMPLIANCE REQUIRED
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Nav background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(26, 26, 26, 0.98)';
+            } else {
+                nav.style.background = 'rgba(26, 26, 26, 0.95)';
+            }
+        });
+
+        // Random glitch effects
+        function addGlitchEffect() {
+            const elements = document.querySelectorAll('.propaganda-card h3');
+            elements.forEach((element, index) => {
+                if (Math.random() < 0.1) { // 10% chance
+                    element.classList.add('glitch');
+                    setTimeout(() => {
+                        element.classList.remove('glitch');
+                    }, 2000);
+                }
+            });
+        }
+
+        // Apply glitch effects randomly
+        setInterval(addGlitchEffect, 5000);
+
+        // Memory hole effect for certain elements
+        function memoryHole() {
+            const stamps = document.querySelectorAll('.ministry-stamp');
+            stamps.forEach(stamp => {
+                if (Math.random() < 0.05) { // 5% chance
+                    stamp.classList.add('memory-hole');
+                    setTimeout(() => {
+                        stamp.classList.remove('memory-hole');
+                    }, 3000);
+                }
+            });
+        }
+
+        setInterval(memoryHole, 3000);
+
+        // Big Brother surveillance notification
+        function surveillanceAlert() {
+            if (Math.random() < 0.001) { // Very rare
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: var(--color-red);
+                    color: white;
+                    padding: 10px 20px;
+                    font-family: 'JetBrains Mono', monospace;
+                    font-size: 0.8rem;
+                    z-index: 3000;
+                    border: 2px solid var(--color-yellow);
+                    animation: fadeInOut 3s ease-in-out;
+                `;
+                notification.textContent = 'BIG BROTHER IS WATCHING YOU';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 3000);
+            }
+        }
+
+        setInterval(surveillanceAlert, 10000);
+
+        // Add CSS for fadeInOut animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0%, 100% { opacity: 0; transform: translateX(100px); }
+                20%, 80% { opacity: 1; transform: translateX(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Enhanced vintage video effects
+        function enhanceVintageEffect() {
+            const videos = document.querySelectorAll('.vintage-video iframe');
+            videos.forEach(video => {
+                // Add random flicker to video containers
+                if (Math.random() < 0.02) { // 2% chance
+                    const container = video.closest('.vintage-video');
+                    container.style.filter = 'brightness(0.7) contrast(1.3)';
+                    setTimeout(() => {
+                        container.style.filter = 'sepia(20%) contrast(1.2) brightness(0.9) saturate(0.8) blur(0.5px)';
+                    }, 150);
+                }
+            });
+        }
+
+        setInterval(enhanceVintageEffect, 1000);
+    </script>
+</body>
+</html>
